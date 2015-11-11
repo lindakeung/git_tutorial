@@ -1,0 +1,5 @@
+1. What are the differences between "git push -f" and "git push"?
+
+2. What are the differences between "git commit -m" and "git commit"?
+
+
