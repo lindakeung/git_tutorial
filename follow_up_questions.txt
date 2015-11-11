@@ -1,5 +1,15 @@
 1. What are the differences between "git push -f" and "git push"?
 
+git push means to update remote refs along with associated objects.
+
+git push -f means "--force". Usually, the command refuses to update a remote ref that is not an ancestor of the local ref used to overwrite it. Also, when --force-with-lease option is used, the command refuses to update a remote ref whose current value does not match what is expected. This flag disables these checks, and can cause the remote repository to lose commits; use it with care. "--force" applies to all the refs that are pushed, hence using it with "push.default" set to matching or with multiple push destinations configured with "remote.*.push" may overwrite refs other than the current branch (including local refs that are strictly behind their remote counterpart). To force a push to only one branch, use a + in front of the refspec to push (e.g git push origin +master to force a push to the master branch). See the ... section above for details.
+
 2. What are the differences between "git commit -m" and "git commit"?
 
+git commit means to record changes to the repository, commit the files that have been added and creates a new revision with a log
+git commit -m means commit message. 
 
+-m
+--message=
+
+Use the given as the commit message. If multiple -m options are given, their values are concatenated as separate paragraphs.
